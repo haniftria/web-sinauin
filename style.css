@@ -171,6 +171,40 @@
 }
 
 
+/* planner */
+
+.plankal iframe{
+	margin-left: 125px;
+	margin-top: 150px;
+}
+.planner {
+	margin-left: 125px;
+}
+
+/* profil */
+.card-profil img{
+	margin-left: 175px;
+}
+.btn-profil{
+	margin-top: 50px;
+}
+.btn-prf{
+	margin-left: 450px;
+}
+/* tambah edit rencana */
+.btn-ter {
+	margin-top: 100px;
+}
+.btn-terr {
+	margin-left: 235px;
+}
+.card-te{
+	margin-left: 300px;
+	margin-top: 150px;
+}
+
+
+
 
 /* desktop */
 @media (min-width: 992px) {

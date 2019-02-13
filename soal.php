@@ -10,7 +10,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>Soal</title>
+    <title>Soal - SINAUIN</title>
   </head>
   <body>
 
@@ -112,18 +112,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-    
-
     <!-- akhir soal -->
   </div>
     <!-- Optional JavaScript -->

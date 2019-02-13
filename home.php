@@ -1,51 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
-
-    <!-- My CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-
-    <title>Sinauin</title>
-  </head>
-  <body>
-    <!-- navbar -->
-    <div class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
-      <div class="container">
-        <a class="navbar-brand" href="C:/xampp/htdocs/sinauinn/home.html">Sinauin</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Planner <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="C:/xampp/htdocs/sinauinn/latsoal.html">Latihan Soal</a>
-                <a class="nav-item nav-link" href="#">Kalender</a>
-                <a class="nav-item btn btn-success tombol" href="C:/xampp/htdocs/sinauinn/login.html">Log in</a>
-              </div>
-            </div>
-        </div>
-    </nav>
-    </div>
-
-    <!-- akhir navbar -->
-
+<?php include ('template/header2.php');?>
     <!-- jumbotron -->
-
+<title>Sinauin</title>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Get study done <span>faster</span> <br>and <span>better</span> with us</br></h1>
-        <a href="daftar.html" class="btn btn-success tomboll">JOIN NOW</a>
+        <a href="planner.php" class="btn btn-success tomboll">START NOW</a>
       </div>
     </div>
     <!-- akhir jumbo-->
@@ -90,7 +49,7 @@
         <div class="col-lg-5">
           <h3>Buat Rencana Belajarmu</h3>
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-          <a href="" class="btn btn-success tomboll">PLAN NOW</a>
+          <a href="planner.php" class="btn btn-success tomboll">PLAN NOW</a>
         </div>
       </div>
       <!-- akhirplan -->
@@ -100,7 +59,7 @@
         <div class="col-lg-6">
         <h3>Mengasah <span> kemampuan </span> dengan <span> latihan soal </span></h3>
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-          <a href="" class="btn btn-success tomboll">KERJAKAN</a>
+          <a href="latsoal.php" class="btn btn-success tomboll">KERJAKAN</a>
       </div>
         <div class="col-lg-5">
           <img src="img/latihan.jpg" alt="Latihan" class="img-fluid"> 
@@ -136,42 +95,4 @@
   </a>
 </div>
     <!-- akhir testimoni -->
-
-    <!-- footer -->
-  <footer class="page-footer">
-   <div class="container">
-    <div class="row">
-      <div class="col-lg-6"> ABOUT </br> <br>SERVICES</br> <br>FAQ</br></div>
-      <div class="col-lg-6">
-        <h5>CONTACT</h5>
-        <ul>
-          <li> <a href="#"> Email </li>
-          <li> <a href="#"> Whatsapp </li>
-            <li> <a href="#"> Instagram </li>
-        </ul>
-      </div>
-    </div>  
-   </div>
-  </footer>
-    <!-- akhir footer-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
-</html>
+    <?php include ('template/footer.php');?>
