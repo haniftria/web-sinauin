@@ -203,9 +203,11 @@
 	margin-top: 150px;
 }
 
-
-
-
+/* materi */
+.card-c {
+  margin-left: 525px;
+  margin-top: 20px;
+}
 /* desktop */
 @media (min-width: 992px) {
 .navbar-brand, .nav-link {

@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['nama'])) {
+     header("location:login.php");
+    } else {
+
+ ?>
 <?php include ('template/header2.php');?>
     <!-- jumbotron -->
 <title>Sinauin</title>
@@ -49,7 +56,7 @@
         <div class="col-lg-5">
           <h3>Buat Rencana Belajarmu</h3>
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-          <a href="planner.php" class="btn btn-success tomboll">PLAN NOW</a>
+          <a href="./kalender/index.php" class="btn btn-success tomboll">PLAN NOW</a>
         </div>
       </div>
       <!-- akhirplan -->
@@ -59,7 +66,7 @@
         <div class="col-lg-6">
         <h3>Mengasah <span> kemampuan </span> dengan <span> latihan soal </span></h3>
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-          <a href="latsoal.php" class="btn btn-success tomboll">KERJAKAN</a>
+          <a href="latsoal2.php" class="btn btn-success tomboll">KERJAKAN</a>
       </div>
         <div class="col-lg-5">
           <img src="img/latihan.jpg" alt="Latihan" class="img-fluid"> 
@@ -96,3 +103,4 @@
 </div>
     <!-- akhir testimoni -->
     <?php include ('template/footer.php');?>
+    <?php } ?>

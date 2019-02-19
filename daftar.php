@@ -4,12 +4,8 @@
 <div class="card-daftar card border-success mb-3" style="max-width: 40rem;">
   <div class="card-header text-center">PENDAFTARAN SISWA</div>
   <div class="card-body text-success">
-     <form action="daftar-aksi.php" method="post">
+     <form action="inputdaftar2.php" method="post">
        <div class="form-row">
-        <div class="form-group col-md-12">
-          <label for="id_siswa">ID siswa</label>
-          <input type="text" class="form-control" name="id_siswa" placeholder="ID Siswa">
-        </div>
         <div class="form-group col-md-12">
           <label for="nama">Nama Lengkap</label>
           <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
@@ -29,28 +25,19 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="id_kelas">Kelas</label>
+            <label>Kelas</label>
             <select name="id_kelas" class="form-control">
-              <option selected>Choose...</option>
-              <option>101</option>
-              <option>102</option>
-              <option>103</option>
-              <option>X TKJ 1</option>
-              <option>X TKJ 2</option>
-              <option>X TKJ 3</option>
-              <option>X RPL 1</option>
-              <option>X RPL 2</option>
-              <option>X RPL 3</option>
-              <option>X RPL 4</option>
-              <option>XI TJA 1</option>
-              <option>XI TJA 2</option>
-              <option>XI TJA 3</option>
-              <option>XI TKJ 1</option>
-              <option>XI TKJ 2</option>
-              <option>XI TKJ 3</option>
-              <option>XI RPL 1</option>
-              <option>XI RPL 2</option>
-              <option>XI RPL 3</option>
+              <option>-- PILIH KELAS --</option>
+              <?php 
+              include ('config.php');
+              $sql_view = "SELECT * FROM kelas";
+
+               $siswa=mysqli_query($conn, $sql_view);
+
+                while ($baris_data = mysqli_fetch_array($siswa, MYSQLI_ASSOC)) {
+                  ?>
+                  <option><?php echo $baris_data['nama_kelas'];?></option>
+              <?php } ?>
             </select>
           </div>
         </div>
@@ -79,4 +66,4 @@
 </div>
 </div>
     <!-- Akhir Daftar/Register -->
-<?php include ('template/header.php');?>
+<?php include ('template/footer.php');?>

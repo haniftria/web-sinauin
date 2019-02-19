@@ -26,9 +26,19 @@
           </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="planner.php">Planner <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="latsoal.php">Latihan Soal</a>
-                <a class="nav-item nav-link" href="kalender.php">Kalender</a>
+                <a class="nav-item nav-link active" href="/kalender/index.php">Planner <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="latsoal2.php">Latihan Soal</a>
+                <a class="nav-item nav-link" href="kalender2.php">Kalender</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Akun
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="logout.php">Log Out</a>
+                  </div>
+                </li>
               </div>
             </div>
         </div>

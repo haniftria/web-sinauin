@@ -1,4 +1,4 @@
-   <?php include ('template/header.php');?>
+   <?php include ('template/header2.php');?>
    <title>Planner - SINAUIN</title>
     <!-- kalender -->
  <div class="container plankal">
@@ -10,7 +10,7 @@
   <div class="container">
       <div class="row planner">
         <div class="col-lg-6">
-        <br> <a href="/kalender/index.php" class="btn btn-success">Tambah & Edit Rencana</a> </br>
+        <br> <a href="terencana.php" class="btn btn-success">Tambah & Edit Rencana</a> </br>
         <br>  <a class="btn btn-success text-light"onclick="konfirmasiDulu()">Hapus Rencana</a> </br>
         <p id="hasil"></p>
     <script>
@@ -29,7 +29,7 @@
     </script>    
         </div>
         <div class="col-lg-5">
-         <br> <a href="/kalender/index.php" class="btn btn-success">Tambah & Edit Hasil Belajar</a></br>
+         <br> <a href="tehasilbel.php" class="btn btn-success">Tambah & Edit Hasil Belajar</a></br>
          <br>  <a class="btn btn-success text-light"onclick="konfirmasii()">Hapus Hasil Belajar</a> </br>
          <p id="hasil"></p>
     <script>

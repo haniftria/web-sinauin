@@ -55,22 +55,7 @@
     </div>
   </fieldset>
   <div class="btn-profil">
-    <a class="btn btn-success text-light"onclick="konfirmasiDulu()">Hapus Akun</a>
-    <p id="hasil"></p>
-    <script>
-      function konfirmasiDulu(){
-        var konfirmasi = confirm("Apakah Anda Yakin Ingin Menghapus Akun??");
-        var text = "";
-        
-        if(konfirmasi === true) {
-          text = "Akun anda telah dihapus";
-        }else{
-          text = "Akun batal dihapus";
-        }
-        
-        document.getElementById("hasil").innerHTML = text;
-      }
-    </script>    
+    <a class="btn btn-success text-light">Hapus Akun</a>
     <a href="#" class="btn btn-success">Edit Profil</a>
     <a href="#" class="btn btn-prf btn-success">OK</a>
   </div>

@@ -1,8 +1,15 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['nama'])) {
+     header("location:/sinauinn/login.php");
+    } else {
+
+ ?>
 <?php include ('header.php');?>
 <!DOCTYPE>
 <html>
 <?php require 'dbconfig.php';
-session_start(); ?>
+?>
 <head>
 <title>QUIZ</title>
 <style>
@@ -157,3 +164,5 @@ session_start(); ?>
 </center>
 </body>
 </html>
+
+<?php } ?>

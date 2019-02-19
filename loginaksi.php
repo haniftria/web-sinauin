@@ -3,10 +3,12 @@ include 'config.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 $login    = mysqli_query($conn, "SELECT * from siswa where email='$email' and password='$password'");
+$user = mysqli_fetch_array($login);
 $result   = mysqli_num_rows($login);
+$nama_user = $user['nama'];
 if($result>0){
-    $user = mysqli_fetch_array($login);
-    session_start();
+	session_start();
+	$_SESSION['nama'] = $nama_user;
     $_SESSION['email'] = $user['email'];
     header("location:home.php");
 }else{

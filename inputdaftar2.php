@@ -11,12 +11,11 @@ $alamat = $_POST ['alamat'];
 $no_hp = $_POST ['no_hp'];
 $password = $_POST ['password'];
 
-$sql_insert = "INSERT INTO siswa VALUES ('$id_siswa', $nama', '$email', '$nis', '$tempat', '$tanggal_lahir', '$id_kelas', '$alamat', '$no_hp', '$password')";
-mysqli_query($conn, $sql_insert) or die (mysqli_Error($conn));
+$sql_input = "INSERT INTO siswa VALUES ('$id_siswa', '$nama', '$email', '$nis', '$tempat', '$tanggal_lahir', '$id_kelas', '$alamat', '$no_hp', '$password')";
+mysqli_query($conn, $sql_input) or die (mysqli_error($conn));
 
-echo '<script>
-alert("Data Berhasil Disimpan");
-location="index.php?"
+echo'<script>
+alert("data disimpan");
+location="index.php"
 </script>';
-
  ?>
