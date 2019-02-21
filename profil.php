@@ -1,15 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php 
+session_start(); 
+include('config.php');
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+$email=$_SESSION['email'];
 
-    <!-- My CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+$sql = "SELECT * FROM siswa where email='$email'";
+
+$result = mysqli_query($conn,$sql);
+$rows=mysqli_num_rows($result);
+
+if($rows>0)
+{
+  $array=mysqli_fetch_assoc($result);
+}
+
+
+?>
+<?php include ('template/header2.php');?>
 
     <title>Profil - SINAUIN</title>
   </head>
@@ -22,42 +29,53 @@
     <form>
   <fieldset disabled>
     <div class="form-group">
-      <label for="disabledTextInput">Nama</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="AAAAA">
+      <label>Nama</label>
+      <input type="text" name="nama" class="form-control" value="<?php echo $array['nama']; ?>" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">NIS</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="31031172">
+      <label>NIS</label>
+      <input type="text" value="<?php echo $array['nis']; ?>" name="nis" class="form-control" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">Tempat Tanggal Lahir</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="Purwokerto, 20 Januari 2000">
+      <label>Kelas</label>
+      <?php 
+        $email=$_SESSION['email'];
+        $sql = "SELECT s.*,k.nama_kelas FROM siswa s LEFT JOIN kelas k ON s.id_kelas=k.id_kelas where email='$email'";
+        $siswa=mysqli_query($conn, $sql);
+
+        while ($baris_data = mysqli_fetch_array($siswa, MYSQLI_ASSOC)) {
+       ?>
+       <input type="text" value="<?php echo $baris_data['nama_kelas'] ?>" name="id_kelas" class="form-control" readonly>
+       <?php } ?>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">Kelas</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="X1 TKJ 2">
+      <label>Tempat</label>
+      <input type="text" value="<?php echo $array['tempat']; ?>" name="tempat" class="form-control" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">Alamat</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="Jl. Mangga no.1">
+      <label>Tanggal lahir</label>
+      <input type="text" value="<?php echo $array['tanggal_lahir']; ?>" name="tanggal_lahir" class="form-control" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">No HP</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="08980898937">
+      <label>Alamat</label>
+      <input type="text" value="<?php echo $array['alamat']; ?>" name="alamat" class="form-control" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">Email</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="aaaa@gmail.com">
+      <label>No HP</label>
+      <input type="text" value="<?php echo $array['no_hp']; ?>" name="no_hp" class="form-control" readonly>
     </div>
     <div class="form-group">
-      <label for="disabledTextInput">Password</label>
-      <input type="password" id="disabledTextInput" class="form-control" placeholder="******">
+      <label>Email</label>
+      <input type="email" value="<?php echo $array['email']; ?>" name="email" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" value="<?php echo $array['password']; ?>" name="password" class="form-control" readonly>
     </div>
   </fieldset>
   <div class="btn-profil">
-    <a class="btn btn-success text-light">Hapus Akun</a>
-    <a href="#" class="btn btn-success">Edit Profil</a>
-    <a href="#" class="btn btn-prf btn-success">OK</a>
+    <a href="editakun.php" class="btn btn-success">Edit Profil</a>
+    <a href="home.php" class="btn btn-success">OK</a>
   </div>
 </form>
   </div>

@@ -33,8 +33,8 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Akun
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="profil.php">Profil</a>
+                    <a class="dropdown-item" href="editakun.php">Edit Profil</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="logout.php">Log Out</a>
                   </div>
