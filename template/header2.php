@@ -13,7 +13,7 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
-
+ 
   </head>
   <body>
     <!-- navbar -->
@@ -29,16 +29,10 @@
                 <a class="nav-item nav-link active" href="/kalender/index.php">Planner <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="latsoal2.php">Latihan Soal</a>
                 <a class="nav-item nav-link" href="kalender2.php">Kalender</a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Akun
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="profil.php">Profil</a>
-                    <a class="dropdown-item" href="editakun.php">Edit Profil</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="nav-item nav-link" href="profil.php">Profil</a>
                   </div>
                 </li>
+                <a class="nav-item btn btn-success tombol" href="logout.php">Log Out</a>
               </div>
             </div>
         </div>

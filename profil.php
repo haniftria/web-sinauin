@@ -13,7 +13,9 @@ if($rows>0)
 {
   $array=mysqli_fetch_assoc($result);
 }
-
+if(!isset($_SESSION['email'])) {
+     header("location:login.php");
+    } else {
 
 ?>
 <?php include ('template/header2.php');?>
@@ -89,3 +91,4 @@ if($rows>0)
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php } ?>

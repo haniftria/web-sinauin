@@ -123,7 +123,7 @@ body {
 </style>
 </head>
 <body>
-    <h2>PHP Calendar Event Management FullCalendar JavaScript Library</h2>
+    <h2>PLANNER SINAUIN</h2>
 
     <div class="response"></div>
     <div id='calendar'></div>

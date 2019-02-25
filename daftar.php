@@ -1,14 +1,4 @@
 <?php include ('template/header.php');?>
-<?php
-  include('config.php');
-
-  $sql_tampil ="SELECT * FROM siswa";
-
-  $kelas=mysqli_query($conn,$sql_tampil);
-
-  while($baris_data=mysqli_fetch_array($kelas,MYSQLI_ASSOC)){
-  // print_r($baris_data);
-    ?>
 <title>Daftar - SINAUIN</title>
     <!-- Daftar/Register -->
 <div class="card-daftar card border-success mb-3" style="max-width: 40rem;">
@@ -49,7 +39,7 @@
 
                 while ($kelas = mysqli_fetch_array($siswa, MYSQLI_ASSOC)) {
                   ?>
-                  <option value="<?php echo $kelas['id_kelas'] ?>" <?= ($baris_data['id_kelas'] == $kelas['id_kelas']) ? 'selected' :'';?>><?php echo $kelas['nama_kelas'];?></option>
+                  <option><?php echo $kelas['nama_kelas'];?></option>
               <?php } ?>
             </select>
           </div>
@@ -80,4 +70,3 @@
 </div>
     <!-- Akhir Daftar/Register -->
 <?php include ('template/footer.php');?>
-<?php } ?>
