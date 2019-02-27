@@ -17,7 +17,7 @@ include('config.php');
      <form action="editakun-aksi.php" method="post">
        <div class="form-row">
         <div class="form-group col-md-12">
-          <input type="hidden" class="form-control" name="id_siswa">
+          <input type="hidden" class="form-control" name="id_siswa" value="<?php echo $bariss['id_siswa']; ?>" readonly>
         </div>
         <div class="form-group col-md-12">
           <label for="nama">Nama Lengkap</label>
@@ -65,11 +65,6 @@ include('config.php');
          <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" name="email" value="<?php echo $bariss['email']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" value="<?php echo $bariss['password']; ?>">
-          </div>
         </div>
         <div class="form-group">
            <button type="submit" class="btn btn-daftar btn-success">Simpan</button>

@@ -56,13 +56,7 @@
   opacity: 1;
   right: 0;
 }
-.title{
-	background-color: #088A29;
-	font-size: 20px;
-  padding: 8px;
-  color: white;
-	
-}
+
 .button3 {
     border: none;
     color: white;
@@ -89,10 +83,10 @@
 </style>
 </head>
 <body><center>
-  <div class="card card-aaaa border-success mb-3" style="max-width: 40rem;">
+  <div class="card bg-success" style="max-width: 100rem; height: 41rem;">
+  <div class="card card-aaaa border-danger mb-3" style="max-width: 40rem;">
   <div class="card-header">Sinauin</div>
   <div class="card-body">
-<div class="title">Materi</div>
 <?php 															
 																if (isset($_POST['click']) || isset($_GET['start'])) {
 																@$_SESSION['clicks'] += 1 ;

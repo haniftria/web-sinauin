@@ -13,9 +13,6 @@ if($rows>0)
 {
   $array=mysqli_fetch_assoc($result);
 }
-if(!isset($_SESSION['email'])) {
-     header("location:login.php");
-    } else {
 
 ?>
 <?php include ('template/header2.php');?>
@@ -70,10 +67,6 @@ if(!isset($_SESSION['email'])) {
       <label>Email</label>
       <input type="email" value="<?php echo $array['email']; ?>" name="email" class="form-control" readonly>
     </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" value="<?php echo $array['password']; ?>" name="password" class="form-control" readonly>
-    </div>
   </fieldset>
   <div class="btn-profil">
     <a href="editakun.php" class="btn btn-success">Edit Profil</a>
@@ -91,4 +84,3 @@ if(!isset($_SESSION['email'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
-<?php } ?>

@@ -39,7 +39,7 @@
 
                 while ($kelas = mysqli_fetch_array($siswa, MYSQLI_ASSOC)) {
                   ?>
-                  <option><?php echo $kelas['nama_kelas'];?></option>
+                  <option value="<?php echo $kelas['id_kelas'];?>"><?php echo $kelas['nama_kelas'];?></option>
               <?php } ?>
             </select>
           </div>
