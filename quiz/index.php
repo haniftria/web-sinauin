@@ -91,9 +91,9 @@
 																if (isset($_POST['click']) || isset($_GET['start'])) {
 																@$_SESSION['clicks'] += 1 ;
 																$c = $_SESSION['clicks'];
-																if(isset($_POST['userans'])) { $userselected = $_POST['userans'];
+																if(isset($_POST['userans'])) { $userselected = $_POST['userans']; $id_mata_pelajaran= $_POST['id_mata_pelajaran'];
 																
-																$fetchqry2 = "UPDATE `pilihan_soal` SET `userans`='$userselected' WHERE `id_pilihan_soal`=$c-1"; 
+																$fetchqry2 = "UPDATE `pilihan_soal` SET `userans`='$userselected' WHERE `id_pilihan_soal`=$c-1 and id_mata_pelajaran='$id_mata_pelajaran'"; 
 																$result2 = mysqli_query($con,$fetchqry2);
 																}
 		  

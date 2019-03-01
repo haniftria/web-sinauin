@@ -1,0 +1,41 @@
+.tabel {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabel th, .tabel td {
+  text-align: left;
+  padding: 8px;
+}
+
+.tabel tr{background-color: #f2f2f2}
+
+.tabel th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tabell {
+	border-collapse: collapse;
+	width: 50%;
+}
+
+.tabell tr{background-color: #f2f2f2}
+.tabell th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.card-c {
+  margin-left: 525px;
+  margin-top: 20px;
+}
+
+.page-f {
+  margin-top: 100px;
+  width: 100%; 
+  height: 40px;
+  padding-top: 7px;
+  background-color: #088A29;
+  color:white;
+}
