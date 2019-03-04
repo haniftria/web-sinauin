@@ -20,9 +20,13 @@
 
 	        	while ($m = mysqli_fetch_array($mapel, MYSQLI_ASSOC)){ 
 	        	?>
-	      	  <input type="text" name="id_mata_pelajaran" placeholder="idmapel" value="<?php echo $m['id_mata_pelajaran']; ?>">
+	      	  <input type="hidden" name="id_mata_pelajaran" placeholder="idmapel" value="<?php echo $m['id_mata_pelajaran']; ?>" readonly>
 	        </div>
 	    	<?php } ?>
+	    	<div class="form-group col-md-12">
+	    		<label>Materi</label>
+	          	<input type="text" name="materi">
+	        </div>
     		<?php
 				$n = $_POST['jum']; // membaca jumlah data
 				for ($i=1; $i<=$n; $i++)

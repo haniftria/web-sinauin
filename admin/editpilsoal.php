@@ -29,6 +29,10 @@
 		          <label>ID Mata pelajaran</label>
 		          <input type="text" class="form-control" name="id_mata_pelajaran" value="<?php echo $baris_data['id_mata_pelajaran']; ?>">
 			    </div>
+			    <div class="form-group col-md-12">
+		          <label>Materi</label>
+		          <input type="text" class="form-control" name="materi" value="<?php echo $baris_data['materi']; ?>">
+			    </div>
 				<div class="form-group col-md-12">
 		          <label>Soal</label>
 		          <input type="text" class="form-control" name="que" value="<?php echo $baris_data['que']; ?>">

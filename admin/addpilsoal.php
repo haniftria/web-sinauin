@@ -20,6 +20,10 @@
 		          <label>ID Mata Pelajaran</label>
 		          <input type="text" class="form-control" name="id_mata_pelajaran">
 		        </div>
+		        <div class="form-group col-md-12">
+		          <label>Materi</label>
+		          <input type="text" class="form-control" name="materi">
+		        </div>
 				<div class="form-group col-md-12">
 		          <label>Soal</label>
 		          <input type="text" class="form-control" name="que">

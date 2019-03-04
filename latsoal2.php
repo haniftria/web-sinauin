@@ -16,7 +16,7 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $k['keterangan']; ?></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="./quiz/index.php" class="btn btn-outline-success" value="<?php echo $k['id_mata_pelajaran']; ?>">Go</a>
+        <a href="./quiz/index.php?id_mata_pelajaran=<?php echo $k['id_mata_pelajaran'];?>" class="list-group-item btn btn-outline-success">Go</a>
       </div>
     </div>
   </div>

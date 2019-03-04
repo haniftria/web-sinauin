@@ -1,5 +1,4 @@
 <?php 
-    //error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
     session_start();
     if(!isset($_SESSION['nama'])) {
      header("location:/sinauinn/login.php");
@@ -89,7 +88,7 @@
   <div class="card-header">Sinauin</div>
   <div class="card-body">
 <?php 															
-																if (isset($_POST['click']) || isset($_GET['materi'])) {
+																if (isset($_POST['click']) || isset($_GET['start'])) {
 																@$_SESSION['clicks'] += 1 ;
 																$c = $_SESSION['clicks'];
 																if(isset($_POST['userans'])) { $userselected = $_POST['userans'];
@@ -105,19 +104,10 @@
 																
 																//echo($_SESSION['clicks']);
 																?>
-<div class="bump"><br><form><?php
-           // $id_mata_pelajaran = $_GET['id_mata_pelajaran'];
-            $sql = "SELECT * FROM pilihan_soal WHERE id_mata_pelajaran = '1' GROUP BY materi";
-            $mapel=mysqli_query($con,$sql);
-            
-            while ($k = mysqli_fetch_array($mapel, MYSQLI_ASSOC))
-            if($_SESSION['clicks']==0){ ?> <button class="button" name="materi" float="left" value="<?php echo $k['materi']; ?>"><span><?php echo $k['materi']; ?></span></button> <?php } ?></form></div>
+<div class="bump"><br><form><?php if($_SESSION['clicks']==0){ ?> <button class="button" name="start" float="left"><span>START QUIZ</span></button> <?php } ?></form></div>
 <form action="" method="post">  				
-<table><?php 
-      if(isset($c)) 
-      { 
-        //$materi = $_GET['materi'];
-        $fetchqry = "SELECT * FROM `pilihan_soal` WHERE id_pilihan_soal='$c'"; 
+<table><?php if(isset($c)) 
+      {   $fetchqry = "SELECT * FROM `pilihan_soal` where id_pilihan_soal='$c'"; 
 				$result=mysqli_query($con,$fetchqry);
 				$num=mysqli_num_rows($result);
 				$row = mysqli_fetch_array($result,MYSQLI_ASSOC); }
@@ -128,7 +118,7 @@
   <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_c'];?>">&nbsp;<?php echo $row['pilihan_c']; ?></td></tr>
   <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_d'];?>">&nbsp;<?php echo $row['pilihan_d']; ?></td></tr>
   <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_e'];?>">&nbsp;<?php echo $row['pilihan_e']; ?><br><br><br></td></tr>
-  <tr><td><button class="button3" name="click">Next</button></td></tr> <?php } 
+  <tr><td><button class="button3" name="click" >Next</button></td></tr> <?php }  
 																	?> 
   <form>
  <?php if($_SESSION['clicks']>5){ 
@@ -147,8 +137,7 @@
  <h2>Result</h2>
  <span>Jumlah jawaban yang benar:&nbsp;<?php echo $no = @$_SESSION['score']; 
  session_unset(); ?></span><br>
- <span>Nilai:&nbsp;<?php echo $no*2; ?></span><br>
- <a href="/sinauinn/home.php">DONE</a>
+ <span>Nilai:&nbsp;<?php echo $no*2; ?></span>
 <?php } ?>
  <!-- <script type="text/javascript">
     function radioValidation(){

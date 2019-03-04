@@ -11,9 +11,8 @@
 		  <div class="card-body">
 		  	<?php
 		  		$idmapel = $_GET['idmapel'];
-	        	
 	        ?>
-	      <input type="text" name="id_mata_pelajaran" placeholder="idmapel" value="<?php echo $idmapel ?>">
+	      <input type="hidden" name="id_mata_pelajaran" placeholder="idmapel" value="<?php echo $idmapel ?>" readonly>
 	  <?php  ?>
 		  <input type="text" name="jum" placeholder="jumlah">
 		  <input type="submit" name="submit" value="Submit">
