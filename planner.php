@@ -11,41 +11,7 @@
       <div class="row planner">
         <div class="col-lg-6">
         <br> <a href="/kalender/index.php" class="btn btn-success">Tambah & Edit Rencana</a> </br>
-        <br>  <a class="btn btn-success text-light"onclick="konfirmasiDulu()">Hapus Rencana</a> </br>
-        <p id="hasil"></p>
-    <script>
-      function konfirmasiDulu(){
-        var konfirmasi = confirm("Apakah Anda Yakin Ingin Menghapus Rencana??");
-        var text = "";
-        
-        if(konfirmasi === true) {
-          text = "Rencana anda telah dihapus";
-        }else{
-          text = "Rencana batal dihapus";
-        }
-        
-        document.getElementById("hasil").innerHTML = text;
-      }
-    </script>    
-        </div>
-        <div class="col-lg-5">
-         <br> <a href="/kalender/index.php" class="btn btn-success">Tambah & Edit Hasil Belajar</a></br>
-         <br>  <a class="btn btn-success text-light"onclick="konfirmasii()">Hapus Hasil Belajar</a> </br>
-         <p id="hasil"></p>
-    <script>
-      function konfirmasii(){
-        var konfirmasii = confirm("Apakah Anda Yakin Ingin Menghapus Hasil Belajar??");
-        var text = "";
-        
-        if(konfirmasii === true) {
-          text = "Hasil belajar anda telah dihapus";
-        }else{
-          text = "Hasil belajar batal dihapus";
-        }
-        
-        document.getElementById("hasil").innerHTML = text;
-      }
-    </script>    
+        <br>  <a class="btn btn-success text-light">Hapus Rencana</a> </br>
         </div>
       </div>
   </div>

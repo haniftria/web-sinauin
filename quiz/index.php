@@ -105,22 +105,30 @@
 																
 																//echo($_SESSION['clicks']);
 																?>
-<div class="bump"><br><form><?php
-           // $id_mata_pelajaran = $_GET['id_mata_pelajaran'];
-            $sql = "SELECT * FROM pilihan_soal WHERE id_mata_pelajaran = '1' GROUP BY materi";
+            <div class="bump"><br>
+            <form><?php
+            $id_mata_pelajaran = $_GET['id_mata_pelajaran'];
+            $sql = "SELECT * FROM pilihan_soal WHERE id_mata_pelajaran = '$id_mata_pelajaran' GROUP BY materi";
             $mapel=mysqli_query($con,$sql);
-            
+
             while ($k = mysqli_fetch_array($mapel, MYSQLI_ASSOC))
-            if($_SESSION['clicks']==0){ ?> <button class="button" name="materi" float="left" value="<?php echo $k['materi']; ?>"><span><?php echo $k['materi']; ?></span></button> <?php } ?></form></div>
+            if($_SESSION['clicks']==0){ ?>
+              <input type="hidden" name="id_mata_pelajaran" placeholder="idmapel" value="<?php echo $id_mata_pelajaran ?>" readonly>
+              <button class="button" name="materi" float="left" value="<?php echo $k['materi']; ?>"><span><?php echo $k['materi']; ?></span></button> <?php } ?>
+            </form>
+            </div>
 <form action="" method="post">  				
 <table><?php 
       if(isset($c)) 
       { 
-        //$materi = $_GET['materi'];
-        $fetchqry = "SELECT * FROM `pilihan_soal` WHERE id_pilihan_soal='$c'"; 
+        $materi = $_GET['materi'];
+        $id_mata_pelajaran = $_GET['id_mata_pelajaran'];
+        $fetchqry = "SELECT * FROM `pilihan_soal` WHERE id_mata_pelajaran='$id_mata_pelajaran' AND materi='$materi'"; 
 				$result=mysqli_query($con,$fetchqry);
 				$num=mysqli_num_rows($result);
-				$row = mysqli_fetch_array($result,MYSQLI_ASSOC); }
+				$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        echo "<pre>";
+        print_r($fetchqry); }
 		  ?>
 <tr><td><h3><br><?php echo @$row['que'];?></h3></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ ?>
   <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_a'];?>">&nbsp;<?php echo $row['pilihan_a']; ?><br>
@@ -130,7 +138,8 @@
   <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_e'];?>">&nbsp;<?php echo $row['pilihan_e']; ?><br><br><br></td></tr>
   <tr><td><button class="button3" name="click">Next</button></td></tr> <?php } 
 																	?> 
-  <form>
+</table>
+</form>
  <?php if($_SESSION['clicks']>5){ 
 	$qry3 = "SELECT `ans`, `userans` FROM `pilihan_soal`;";
 	$result3 = mysqli_query($con,$qry3);
@@ -145,10 +154,9 @@
  
  
  <h2>Result</h2>
- <span>Jumlah jawaban yang benar:&nbsp;<?php echo $no = @$_SESSION['score']; 
- session_unset(); ?></span><br>
+ <span>Jumlah jawaban yang benar:&nbsp;<?php echo $no = @$_SESSION['score']; ?></span><br>
  <span>Nilai:&nbsp;<?php echo $no*2; ?></span><br>
- <a href="/sinauinn/home.php">DONE</a>
+ <a href="/sinauinn/latsoal2.php">DONE</a>
 <?php } ?>
  <!-- <script type="text/javascript">
     function radioValidation(){
@@ -165,6 +173,7 @@
 		}
     }
 </script> -->
+</div>
 </div>
 </div>
 </center>

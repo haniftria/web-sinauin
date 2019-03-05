@@ -7,7 +7,7 @@
  ?>
 <!DOCTYPE html>
 <html>
-
+<title>Planner - SINAUIN</title>
 <head>
 <link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
 <script src="fullcalendar/lib/jquery.min.js"></script>
@@ -103,6 +103,7 @@ body {
     text-align: center;
     font-size: 12px;
     font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    background-color: #088A29;
 }
 
 #calendar {
