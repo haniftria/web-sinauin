@@ -3,7 +3,7 @@
 <title>Latihan Soal - SINAUIN</title>
   <!-- menu Latihan soal -->
 <div class="container">
-  <div class="row 1">
+  <div class="row">
     <?php 
             $sql = "SELECT * FROM mata_pelajaran WHERE id_mata_pelajaran";
             $mapel=mysqli_query($conn,$sql);
@@ -16,7 +16,7 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $k['keterangan']; ?></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="./quiz/index.php" class="btn btn-outline-success" value="<?php echo $k['id_mata_pelajaran']; ?>">Go</a>
+        <a href="./quiz/index1.php" class="btn btn-outline-success" value="<?php echo $k['id_mata_pelajaran']; ?>">Go</a>
       </div>
     </div>
   </div>

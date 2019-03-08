@@ -103,7 +103,6 @@ body {
     text-align: center;
     font-size: 12px;
     font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
-    background-color: #088A29;
 }
 
 #calendar {

@@ -26,7 +26,7 @@
           </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="/kalender/index.php">Planner <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="planner2.php">Planner</a>
                 <a class="nav-item nav-link" href="latsoal2.php">Latihan Soal</a>
                 <a class="nav-item nav-link" href="kalender2.php">Kalender</a>
                 <a class="nav-item nav-link" href="profil.php">Profil</a>

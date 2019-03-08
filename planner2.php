@@ -1,53 +1,50 @@
-   <?php include ('template/header2.php');?>
-   <title>Planner - SINAUIN</title>
-    <!-- kalender -->
- <div class="container plankal">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%2333cc00&amp;src=akunseken44%40gmail.com&amp;color=%231B887A&amp;src=id.indonesian%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FJakarta" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
- </div>
-    <!-- akhir kalender -->
+<?php 
+    //error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+session_start();
+if(!isset($_SESSION['nama'])) {
+ header("location:/sinauinn/login.php");
+} else {
 
-    <!-- tombol2 -->
+ ?>
+<br>
+<?php include ('./template/header2.php');?>
+</br>
+<br>
+<title>Planner - SINAUIN</title>
   <div class="container">
-      <div class="row planner">
-        <div class="col-lg-6">
-        <br> <a href="terencana.php" class="btn btn-success">Tambah & Edit Rencana</a> </br>
-        <br>  <a class="btn btn-success text-light"onclick="konfirmasiDulu()">Hapus Rencana</a> </br>
-        <p id="hasil"></p>
-    <script>
-      function konfirmasiDulu(){
-        var konfirmasi = confirm("Apakah Anda Yakin Ingin Menghapus Rencana??");
-        var text = "";
-        
-        if(konfirmasi === true) {
-          text = "Rencana anda telah dihapus";
-        }else{
-          text = "Rencana batal dihapus";
-        }
-        
-        document.getElementById("hasil").innerHTML = text;
-      }
-    </script>    
-        </div>
-        <div class="col-lg-5">
-         <br> <a href="tehasilbel.php" class="btn btn-success">Tambah & Edit Hasil Belajar</a></br>
-         <br>  <a class="btn btn-success text-light"onclick="konfirmasii()">Hapus Hasil Belajar</a> </br>
-         <p id="hasil"></p>
-    <script>
-      function konfirmasii(){
-        var konfirmasii = confirm("Apakah Anda Yakin Ingin Menghapus Hasil Belajar??");
-        var text = "";
-        
-        if(konfirmasii === true) {
-          text = "Hasil belajar anda telah dihapus";
-        }else{
-          text = "Hasil belajar batal dihapus";
-        }
-        
-        document.getElementById("hasil").innerHTML = text;
-      }
-    </script>    
-        </div>
-      </div>
-  </div>
-  <!-- akhir tombol2 -->
-<?php include ('template/footer.php');?>
+    <br>
+    <h2><center>Planner Sinauin</center></h2>
+  </br> <br>
+    <table class="table" align="center">
+  <tr class="bg-success text-light">
+    <th>Tanggal</th>
+    <th>Rencana</th>
+    <th>Hasil Belajar</th>
+    <th>Opsi</th>
+  </tr></div>
+  <?php
+  include('config.php');
+  $id_user=$_SESSION['id_siswa'];
+  $sql_tampil ="SELECT * FROM planner WHERE id_siswa='$id_user'";
+
+  $plan=mysqli_query($conn,$sql_tampil);
+
+  while($row=mysqli_fetch_array($plan,MYSQLI_ASSOC)){
+    ?>
+    <tr>
+      <td><?php echo $row['tanggal']; ?></td>
+      <td><?php echo $row['plan']; ?></td>
+      <td><?php echo $row['review']; ?></td>
+      <td>
+        <a class="btn btn-info btn-sm" href="editplan.php?id_planner=<?php echo $row['id_planner']; ?>">Edit</a>
+        <a class="btn btn-warning btn-sm" href="hapusplan.php?id_planner=<?php echo $row['id_planner']; ?>">Hapus</a>
+          </td>
+    </tr>
+<?php } ?>
+<a class="btn tambah btn-primary btn-sm" href="addplan.php?id_siswa=<?php echo $id_user;?>">Tambah</a>
+</body>
+</html>
+</table>
+</div>      
+<?php include ('./template/footer.php');?>
+<?php } ?>

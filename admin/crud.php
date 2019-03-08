@@ -15,6 +15,7 @@
 	    <a class="list-group-item" href="kelas.php">Tabel Kelas</a>
 	    <a class="list-group-item" href="mapel.php">Tabel Mata Pelajaran</a>
 	    <a class="list-group-item" href="pilsoal.php">Tabel Pilihan Soal</a>
+	    <a class="list-group-item" href="planner.php">Tabel Planner</a>
 	    <a class="list-group-item" href="buatsoal2.php">BUAT SOAL</a>
   </ul>
   </div>

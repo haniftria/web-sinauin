@@ -94,14 +94,7 @@ if(!isset($_SESSION['nama'])) {
           $c = $_SESSION['clicks'];
           if(isset($_POST['userans'])) { 
             $userselected = $_POST['userans'];
-            $ans = $_POST['ans'];
             $id_pilihan_soal = $_POST['id_pilihan_soal'];
-            $_SESSION = array( [$c] => ['id_pilihan_soal']="$id_pilihan_soal",
-                                       ['userans']="$userselected",
-                                       ['ans']="$ans");
-            // $_SESSION['id_pilihan_soal'] = $id_pilihan_soal;
-            // $_SESSION['ans'] = $ans;
-            // $_SESSION['userans'] = $userselected;
 
           // $fetchqry2 = "UPDATE `pilihan_soal` SET `userans`='$userselected' WHERE `id_pilihan_soal`=$c-1"; 
           // $result2 = mysqli_query($con,$fetchqry2);
@@ -154,21 +147,16 @@ if(!isset($_SESSION['nama'])) {
               <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_d'];?>">&nbsp;<?php echo $row['pilihan_d']; ?></td></tr>
               <tr><td><input required type="radio" name="userans" value="<?php echo $row['pilihan_e'];?>">&nbsp;<?php echo $row['pilihan_e']; ?><br><br><br></td></tr>
               <tr><td>
-               <input type="hidden" name="ans" value="<?=$row['ans'];?>" readonly>
                <input type="hidden" name="id_pilihan_soal" value="<?=$row['id_pilihan_soal'];?>" readonly> <button class="button3" name="click">Next</button></td></tr> <?php } 
               ?> 
             </table>
           </form>
           <?php if($_SESSION['clicks']>$num){ 
-           // $qry3 = "SELECT `ans`, `userans` FROM `pilihan_soal` WHERE id_mata_pelajaran='$id_mata_pelajaran' AND materi='$materi';";
-           // $result3 = mysqli_query($con,$qry3);
-           // $storeArray = Array();
-           $_SESSION["jawaban"][$c]['id_pilihan_soal']=$id_pilihan_soal;
-           $_SESSION["jawaban"][$c]['userans']=$userselected;
-           $_SESSION["jawaban"][$c]['ans']=$ans;
-           while ($key = mysqli_fetch_array($_SESSION, MYSQLI_ASSOC))
-            foreach ($_SESSION = $key => $userselected) {
-             if($key['userans']==$key['ans']){
+           $qry3 = "SELECT `ans`, `userans` FROM `pilihan_soal` WHERE id_mata_pelajaran='$id_mata_pelajaran' AND materi='$materi';";
+           $result3 = mysqli_query($con,$qry3);
+           $storeArray = Array();
+           while ($row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC)) {
+             if($row3['ans']==$row3['userans']){
                @$_SESSION['score'] += 1 ;
              }
            }
